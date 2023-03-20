@@ -1,9 +1,12 @@
 <script>
 	export let data;
 
+	import { getContext } from 'svelte';
+	const user = getContext('user');
+
 	let make = '';
 	let model = '';
-	
+
 	async function handleClick() {
 		const insertData = JSON.stringify({
 			make: make,
@@ -14,9 +17,12 @@
 
 		const response = await insertTrigger(insertData);
 
-		console.log("Response on that request:", response);
+		console.log('Response on that request:', response);
 	}
 
+	/**
+	 * @param {object} insertData
+	 */
 	async function insertTrigger(insertData) {
 		try {
 			const response = await fetch('api/assignments', {
@@ -47,6 +53,7 @@
 </script>
 
 <h1>LCFR</h1>
+<p>Welcome {user.name}</p>
 <p>{JSON.stringify(data)}</p>
 
 <form>

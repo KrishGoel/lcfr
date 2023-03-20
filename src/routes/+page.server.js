@@ -1,11 +1,11 @@
 import db from "$lib/db"
 
+// import { writable, derived } from 'svelte/store'
+// export const isAuthenticated = writable(false)
+
 export async function load() {
 	try {
 		const assignments = await db.collection(`assignments`).find().toArray()
-
-		// This insertion is working
-		// const result = await db.collection("assignments").insertOne({"make": "BMW"})
 
 		return {
 			status: 200,

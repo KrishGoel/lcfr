@@ -26,6 +26,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@auth0/auth0-spa-js": "^2.0.4",
 		"mongodb": "^5.1.0"
 	}
 }
