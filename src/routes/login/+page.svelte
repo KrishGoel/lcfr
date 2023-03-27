@@ -80,5 +80,5 @@
 <div class="text-slate-200 py-8">
 	<p>{JSON.stringify(data)}</p>
 	<!-- <p>{countValue}</p> -->
-	<!-- <p>Hash-256 for Krish: {sha256('Krish')}</p> -->
+	<p>Hash-256 for " ": {sha256("")}</p>
 </div>
