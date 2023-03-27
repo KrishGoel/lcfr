@@ -1,7 +1,7 @@
 <div>
-	<div class="grid grid-cols-2">
+	<div class="grid grid-cols-2 :grid-cols-1">
 		<div class="space-y-6">
-			<h1 class="font-extrabold text-slate-200 text-3xl sm:text-5xl">LCFR</h1>
+			<h1 class="font-extrabold text-slate-200 text-5xl sm:text-5xl">LCFR</h1>
 			<h2 class="font-bold text-slate-200 text-2xl">The Internal Management Tool for our 3D-Creation Partners at VKYD Labs</h2>
 			<p class="text-slate-200 text-base">
 				We are pioneering brand on-boarding and creation of digital assets for the new generation of businesses. Welcome to <span class="font-bold">VKYD Labs</span>, we call this <span class="italic">Phy-Gital Commerce</span>.
