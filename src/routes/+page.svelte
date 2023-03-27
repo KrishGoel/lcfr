@@ -1,4 +1,4 @@
-<div class="grid grid-cols-2 md:grid-cols-1 flex h-screen overflow-x-hidden gap-8">
+<div class="grid grid-cols-2 md:grid-cols-1 flex min-h-[calc(100vh-80px)] gap-8">
 	<div class="space-y-6 m-auto">
 
 		<h1 class="font-extrabold text-slate-200 text-5xl sm:text-5xl">LCFR</h1>
@@ -16,7 +16,7 @@
 			<span aria-hidden="true" class="sm:inline pl-2 font-extra bold">→</span>
 		</a>
 	</div>
-	<div class="m-auto">
+	<div class="m-auto md:m-0">
 		<img class="rounded-md bg-white/5 ring-1 ring-white/10" src="images/dashboard-screenshot.png" alt="App screenshot">
 	</div>
 </div>

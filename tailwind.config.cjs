@@ -11,5 +11,7 @@ module.exports = {
 		},
 		extend: {},
 	},
+	// To be able to use calc()
+	mode: 'jit',
 	plugins: [],
 }
