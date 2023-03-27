@@ -1,5 +1,5 @@
 import { json } from "@sveltejs/kit"
-import { _insert } from "../../+page.server"
+import { _insert } from "../../login/+page.server"
 
 export async function POST({ request }) {
 	const requestBody = await request.json()
@@ -10,7 +10,7 @@ export async function POST({ request }) {
 			status: 200,
 			body: {
 				request: JSON.stringify(requestBody)
-			} 
+			}
 		})
 	} catch (error) {
 		console.log(error)

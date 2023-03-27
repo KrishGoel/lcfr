@@ -1,87 +1,20 @@
-<script>
-	export let data
+<div>
+	<div class="grid grid-cols-2">
+		<div class="space-y-6">
+			<h1 class="font-extrabold text-slate-200 text-3xl sm:text-5xl">LCFR</h1>
+			<h2 class="font-bold text-slate-200 text-2xl">The Internal Management Tool for our 3D-Creation Partners at VKYD Labs</h2>
+			<p class="text-slate-200 text-base">
+				We are pioneering brand on-boarding and creation of digital assets for the new generation of businesses. Welcome to <span class="font-bold">VKYD Labs</span>, we call this <span class="italic">Phy-Gital Commerce</span>.
+			</p>
 
-	import { getContext } from "svelte"
-	const user = getContext("user")
-
-	let make = ""
-	let model = ""
-
-	async function handleClick() {
-		const insertData = JSON.stringify({
-			make: make,
-			model: model
-		})
-
-		console.log("Data requested to be inserted:", insertData)
-
-		const response = await insertTrigger(insertData)
-
-		console.log("Response on that request:", response)
-	}
-
-	/** @param {object} insertData */
-	async function insertTrigger(insertData) {
-		try {
-			const response = await fetch("api/assignments", {
-				method: "POST",
-				headers: {
-					"Content-Type": "application/json"
-				},
-				body: insertData
-			})
-
-			const res = await response.json()
-
-			return {
-				status: 200,
-				assignments: res
-			}
-		} catch (error) {
-			console.error(error)
-
-			return {
-				status: 500,
-				body: {
-					message: "An error occurred while loading the assignments: " + error.message
-				}
-			}
-		}
-	}
-</script>
-
-<!-- <form>
-	<label>
-		Make:
-		<input type="text" bind:value={make} />
-	</label>
-	<label>
-		Model:
-		<input type="text" bind:value={model} />
-	</label>
-	<button on:click={handleClick}>Insert Document</button>
-</form> -->
-
-<!-- Login -->
-
-<div class="flex justify-center items-center h-screen bg-gray-100">
-	<form class="bg-white p-6 rounded-lg shadow-md">
-		<h1 class="text-4xl font-bold mb-6">LCFR</h1>
-		<h2 class="text-2xl font-semibold mb-6">Log in</h2>
-		<div class="mb-4">
-			<label class="block font-semibold mb-2" for="email">Email</label>
-			<input class="border-gray-300 border-solid border-2 p-2 w-full rounded-lg" type="text" bind:value={model}/>
+			<a href="/login" class="inline-flex justify-center rounded-lg text-sm font-semibold py-3 px-5 bg-sky-600 text-white hover:bg-indigo-900 duration-300 cursor-pointer shadow-xl hover:shadow-none">
+				Log In
+				<span aria-hidden="true" class="sm:inline pl-2 font-extra bold">→</span>
+			</a>
+			<a href="/admin" class="text-sm font-semibold text-white hover:text-slate-300 duration-300 ml-6">
+				Admin Access 
+				<span aria-hidden="true" class="sm:inline pl-2 font-extra bold">→</span>
+			</a>
 		</div>
-		<div class="mb-6">
-			<label class="block font-semibold mb-2" for="password">Password</label>
-			<input class="border-gray-300 border-solid border-2 p-2 w-full rounded-lg" type="password" bind:value={make}/>
-		</div>
-		<div class="flex justify-end">
-			<button class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg" on:click={handleClick}>Log in</button>
-		</div>
-	</form>
-</div>
-
-<div class="flex justify-center items-center bg-gray-100">
-	<p>{JSON.stringify(data)}</p>
+	</div>
 </div>

@@ -1,8 +1,5 @@
 import db from "$lib/db"
 
-// import { writable, derived } from 'svelte/store'
-// export const isAuthenticated = writable(false)
-
 export async function load() {
 	try {
 		const assignments = await db.collection(`assignments`).find().toArray()
@@ -24,7 +21,6 @@ export async function load() {
 
 export async function _insert(request) {
 	try {
-		// const result = await db.collection("assignments").insertOne({"make": "BMW"})
 		const result = await db.collection("assignments").insertOne(request)
 
 		return {

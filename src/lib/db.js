@@ -5,4 +5,4 @@ const client = new MongoClient(DB_URI)
 
 await client.connect()
 
-export default client.db('lcfr')
+export default client.db("lcfr")
