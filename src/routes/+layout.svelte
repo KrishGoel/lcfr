@@ -8,7 +8,7 @@
 	<div class="w-10/12 mx-auto">
 		{#if $page.data.session}
 			<p class="text-slate-200 text-base mb-10">
-				Signed in as {$page.data.session.user?.email ?? $page.data.session.user?.name}.
+				Signed in as {$page.data.session.user?.name ?? $page.data.session.user?.email}.
 			</p>
 			<!-- <a href="/auth/signout" class="button" data-sveltekit-preload-data="off">Sign out</a> -->
 		{:else}

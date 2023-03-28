@@ -7,9 +7,9 @@
 		<h1 class="font-extrabold text-slate-200 text-5xl mb-16">Dashboard</h1>
 		{#if $page.data.session}
 			<p class="font-regular text-slate-200 text-base">
-				Welcome Back {$page.data.session.user?.email ?? $page.data.session.user?.name}
+				Welcome Back {$page.data.session.user?.name ?? $page.data.session.user?.email}
 			</p>
-			<p class="font-regular text-slate-200 text-base">
+			<p class="font-regular text-slate-200 text-base mb-8">
 				Session expiry: {$page.data.session?.expires}
 			</p>
 
