@@ -10,7 +10,7 @@
 				businesses. Welcome to <span class="font-bold">VKYD Labs</span>, we call this <span class="italic">Phygital Commerce</span>.
 			</p>
 
-			<a href="/login" class="inline-flex justify-center rounded-lg text-sm font-semibold py-3 px-5 bg-sky-600 text-white hover:bg-indigo-900 duration-300 cursor-pointer shadow-xl hover:shadow-none">
+			<a href="/auth/signin" class="inline-flex justify-center rounded-lg text-sm font-semibold py-3 px-5 bg-sky-600 text-white hover:bg-indigo-900 duration-300 cursor-pointer shadow-xl hover:shadow-none">
 				Log In
 				<span aria-hidden="true" class="sm:inline pl-2 font-extra bold">→</span>
 			</a>
