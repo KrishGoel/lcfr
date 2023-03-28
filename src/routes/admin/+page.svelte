@@ -2,7 +2,7 @@
 	<div class="grid grid-cols-2 xs:grid-cols-1 sm:grid-cols-1 md:grid-cols-1 gap-8">
 		<div class="m-auto">
 			<h2 class="font-bold text-slate-200 text-xl mb-4">
-				Welcome Back Creation Partner
+				Welcome Back Admin
 			</h2>
 			<h1 class="font-extrabold text-slate-200 text-5xl mb-16">Login</h1>
 

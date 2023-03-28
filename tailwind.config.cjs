@@ -1,17 +1,19 @@
 /** @type {import("tailwindcss").Config} */
+
 module.exports = {
 	content: ["./src/**/*.{html,js,svelte,ts}", "./src/**/**/*.{html,js,svelte,ts}"],
 	theme: {
 		screens: {
-			'2xl' : { 'max': '1920px' },
-			'xl': { 'max': '1280px' },
-			'lg': { 'max': '1080px' },
-			'md': { 'max': '780px' },
-			'sm': { 'max': '640px' }
-		},
+			'sm': {'min': '0px', 'max': '450px'},
+			'md': {'min': '450px', 'max': '720px'},
+			'lg': {'min': '720px', 'max': '1920px'},
+			'xl': {'min': '1920px'}
+		  },
 		extend: {},
 	},
-	// To be able to use calc()
+
+	// To be able to use calc(), uncomment the following line
 	mode: 'jit',
+
 	plugins: [],
 }
