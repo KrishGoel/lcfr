@@ -15,7 +15,7 @@
 		<p class="text-slate-200 text-base mb-10">
 			Not signed in
 		</p>
-			<!-- <a href="/auth/signin" class="buttonPrimary" data-sveltekit-preload-data="off">Sign in</a> -->
+			<a href="/auth/signin" data-sveltekit-preload-data="off">Sign in</a>
 		{/if}
 	</div>
 
