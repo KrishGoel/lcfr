@@ -1,7 +1,7 @@
 <script>
-	import '../app.css';
+	import '../app.css'
 
-	import { page } from '$app/stores';
+	import { page } from '$app/stores'
 </script>
 
 <main class="min-h-screen pt-[120px] pb-[40px] bg-slate-900">
