@@ -1,5 +1,47 @@
 <script>
-	import { page } from '$app/stores';
+	import { page } from '$app/stores'
+	export let data
+
+	if ($page.data.session) {
+		console.log('Session Data:', $page.data.session)
+	}
+
+	// let make = ''
+	// let model = ''
+
+	// async function handleClick() {
+	// 	const insertData = JSON.stringify({
+	// 		make: make,
+	// 		model: model
+	// 	})
+	// 	console.log('Data requested to be inserted:', insertData)
+	// 	const response = await insertTrigger(insertData)
+	// 	console.log('Response on that request:', response)
+	// }
+	// async function insertTrigger(insertData) {
+	// 	try {
+	// 		const response = await fetch('api/assignments', {
+	// 			method: 'POST',
+	// 			headers: {
+	// 				'Content-Type': 'application/json'
+	// 			},
+	// 			body: insertData
+	// 		})
+	// 		const res = await response.json()
+	// 		return {
+	// 			status: 200,
+	// 			assignments: res
+	// 		}
+	// 	} catch (error) {
+	// 		console.error(error)
+	// 		return {
+	// 			status: 500,
+	// 			body: {
+	// 				message: 'An error occurred while loading the assignments: ' + error.message
+	// 			}
+	// 		}
+	// 	}
+	// }
 </script>
 
 <div class="w-10/12 mx-auto min-h-[calc(100vh-160px)] flex">
@@ -10,10 +52,13 @@
 				{$page.data.session.user?.name}
 			</h2>
 			<p class="font-semibold text-slate-200 text-base mb-12">
-				{$page.data.session.user?.email}
+				{#if $page.data.session.isAdmin}[Admin Access]{:else}[Non-Admin Access]{/if} {$page.data.session.user?.email}
 			</p>
 			<p class="font-regular text-slate-200 text-base mb-8">
 				Session expiry: {$page.data.session?.expires}
+			</p>
+			<p class="font-regular text-slate-200 text-base mb-8 break-all">
+				Data: {JSON.stringify(data)}
 			</p>
 		</div>
 	{:else}
@@ -36,7 +81,10 @@
 					{$page.data.session ? 'Log Out' : 'Log In'}
 					<span aria-hidden="true" class="sm:inline pl-2 font-extra bold">→</span>
 				</a>
-				<a href="/admin" class="text-sm font-semibold text-white hover:text-slate-300 duration-300 ml-6">
+				<a
+					href="/admin"
+					class="text-sm font-semibold text-white hover:text-slate-300 duration-300 ml-6"
+				>
 					Admin Access
 					<span aria-hidden="true" class="sm:inline pl-2 font-extra bold">→</span>
 				</a>

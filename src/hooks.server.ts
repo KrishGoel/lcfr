@@ -9,5 +9,6 @@ export const handle = SvelteKitAuth({
 		GitHub({
 			clientId: GITHUB_ID,
 			clientSecret: GITHUB_SECRET
-		})],
+		})
+	]
 })
