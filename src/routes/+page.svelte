@@ -82,7 +82,7 @@
 					<span aria-hidden="true" class="sm:inline pl-2 font-extra bold">→</span>
 				</a>
 				<a
-					href="/admin"
+					href="/auth/signin"
 					class="text-sm font-semibold text-white hover:text-slate-300 duration-300 ml-6"
 				>
 					Admin Access
