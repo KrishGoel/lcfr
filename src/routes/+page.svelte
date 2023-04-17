@@ -1,65 +1,51 @@
 <script>
-	import { page } from '$app/stores'
-	export let data
+	import { page } from '$app/stores';
+	export let data;
 
 	if ($page.data.session) {
-		console.log('Session Data:', $page.data.session)
+		console.log('Session Data:', $page.data.session);
 	}
-
-	// let make = ''
-	// let model = ''
-
-	// async function handleClick() {
-	// 	const insertData = JSON.stringify({
-	// 		make: make,
-	// 		model: model
-	// 	})
-	// 	console.log('Data requested to be inserted:', insertData)
-	// 	const response = await insertTrigger(insertData)
-	// 	console.log('Response on that request:', response)
-	// }
-	// async function insertTrigger(insertData) {
-	// 	try {
-	// 		const response = await fetch('api/assignments', {
-	// 			method: 'POST',
-	// 			headers: {
-	// 				'Content-Type': 'application/json'
-	// 			},
-	// 			body: insertData
-	// 		})
-	// 		const res = await response.json()
-	// 		return {
-	// 			status: 200,
-	// 			assignments: res
-	// 		}
-	// 	} catch (error) {
-	// 		console.error(error)
-	// 		return {
-	// 			status: 500,
-	// 			body: {
-	// 				message: 'An error occurred while loading the assignments: ' + error.message
-	// 			}
-	// 		}
-	// 	}
-	// }
 </script>
 
 <div class="w-10/12 mx-auto min-h-[calc(100vh-160px)] flex">
 	{#if $page.data.session}
-		<div class="mt-8">
+		<div class="mt-8 w-full">
 			<h3 class="font-semibold text-slate-400 text-lg">Welcome Back</h3>
 			<h2 class="font-extrabold text-slate-200 text-3xl mb-4">
 				{$page.data.session.user?.name}
 			</h2>
 			<p class="font-semibold text-slate-200 text-base mb-12">
-				{#if $page.data.session.isAdmin}[Admin Access]{:else}[Non-Admin Access]{/if} {$page.data.session.user?.email}
+				{#if $page.data.session.isAdmin}[Admin Access]{:else}[Non-Admin Access]{/if}
+				{$page.data.session.user?.email}
 			</p>
 			<p class="font-regular text-slate-200 text-base mb-8">
 				Session expiry: {$page.data.session?.expires}
 			</p>
-			<p class="font-regular text-slate-200 text-base mb-8 break-all">
-				Data: {JSON.stringify(data)}
-			</p>
+			<h3 class="font-semibold text-slate-200 text-lg mb-2">Available Assignments</h3>
+
+			<div class="overflow-x-auto rounded-lg border border-slate-200 w-full">
+				<table class="min-w-full divide-y-2 divide-slate-200 text-sm">
+					<thead align="left">
+						<tr>
+							<th class="whitespace-nowrap px-4 py-4 font-medium text-slate-200 text-left">
+								Assignment Name
+							</th>
+							<th class="whitespace-nowrap px-4 py-4 font-medium text-slate-200"> Details </th>
+							<th class="whitespace-nowrap px-4 py-4 font-medium text-slate-200"> ID </th>
+						</tr>
+					</thead>
+
+					<tbody class="divide-y divide-slate-200">
+						{#each data.assignments as assignment}
+							<tr>
+								<td class="whitespace-nowrap px-4 py-2 font-medium text-slate-300">{assignment.name}</td>
+								<td class="whitespace-nowrap px-4 py-2 text-slate-300">{assignment.details}</td>
+								<td class="whitespace-nowrap px-4 py-2 text-slate-300">{assignment._id}</td>
+							</tr>
+						{/each}
+					</tbody>
+				</table>
+			</div>
 		</div>
 	{:else}
 		<div class="grid grid-cols-2 xs:grid-cols-1 sm:grid-cols-1 md:grid-cols-1 gap-8">
