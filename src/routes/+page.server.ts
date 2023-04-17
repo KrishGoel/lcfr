@@ -20,22 +20,3 @@ export async function load() {
 		}
 	}
 }
-
-// export async function _insert(request) {
-// 	try {
-// 		// const result = await db.collection("assignments").insertOne({"make": "BMW"})
-// 		const result = await db.collection('assignments').insertOne(request)
-
-// 		return {
-// 			status: 200,
-// 			message: 'Document inserted successfully: ' + JSON.stringify(result)
-// 		}
-// 	} catch (error) {
-// 		return {
-// 			status: 500,
-// 			body: {
-// 				message: 'An error occurred while inserting the assignments: ' + error
-// 			}
-// 		}
-// 	}
-// }
